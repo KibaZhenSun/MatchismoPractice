@@ -11,6 +11,10 @@
 #import "Card.h"
 
 @interface CardMatchingGame : NSObject
+@property (nonatomic, readonly) NSInteger score; // readonly means no setter
+@property (nonatomic) NSUInteger maxMatchingCards;
+@property (nonatomic, readonly) NSArray *lastChosenCards;
+@property (nonatomic, readonly) NSInteger lastScore;
 
 // Designated initializer
 - (instancetype) initWithCardCount: (NSUInteger) count
@@ -18,8 +22,5 @@
 
 - (void) chooseCardAtIndex: (NSUInteger) index;
 - (Card *) cardAtIndex: (NSUInteger) index;
-
-@property (nonatomic, readonly) NSInteger score;
-                   // readonly means no setter
 
 @end
